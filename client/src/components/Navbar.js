@@ -16,6 +16,10 @@ class Navbar extends Component {
       document.querySelectorAll(".navbar-burger"),
       0
     );
+    // const $navbarItems = Array.prototype.slice.call(
+    //   document.querySelectorAll(".navbar-item"),
+    //   0
+    // );
       
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
@@ -25,12 +29,22 @@ class Navbar extends Component {
           // Get the target from the "data-target" attribute
           const target = el.dataset.target;
           const $target = document.getElementById(target);
+          console.log($target)
 
           // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
           el.classList.toggle("is-active");
           $target.classList.toggle("is-active");
         });
       });
+
+      // $navbarItems.forEach(el => {
+      //   el.addEventListener("click",()=>{
+      //     const target = el.dataset.target;
+      //     const $target = document.getElementById(target);
+      //     console.log($target)
+      //     $target.classList.toggle("is-active");
+      //   })
+      // })
     }
 
     // });
@@ -76,6 +90,9 @@ class Navbar extends Component {
             </Link>
             <Link to='/timetable' className='navbar-item'>
               Time Table
+            </Link>
+            <Link to='/support' className='navbar-item'>
+              Support
             </Link>
             {/* <div className='navbar-item has-dropdown is-hoverable'>
               <a className='navbar-link'>More</a>
