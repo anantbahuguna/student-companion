@@ -377,6 +377,19 @@ app.post("/login", (req, res) => {
   // }, 5000);
 });
 
+
+function logout(){
+	request({secureProtocol: 'TLSv1_method', strictSSL: false, url:'https://webkiosk.jiit.ac.in/CommonFiles/SignOut.jsp', headers:headers}, function(error, res, body){
+		if(error) throw error;
+		else{
+			console.log(body);
+		}
+	});
+}
+
+
+
+
 app.get("/showAttendance", verifyToken, (req, res) => {
   // console.log("sending this to react", subjects);
   // const token = req.body.token
@@ -413,12 +426,7 @@ app.get("/showAttendance", verifyToken, (req, res) => {
 });
 
 app.get("/logout", (req, res) => {
-  req.session.destroy(err => {
-    if (err) {
-      return console.log(err);
-    }
-    res.redirect("/");
-  });
+  logout(function(error))
 });
 // format of token
 // authorization: Bearer <access_token>
