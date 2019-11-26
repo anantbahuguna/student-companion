@@ -4,15 +4,15 @@ class Tile extends Component {
   render() {
     return (
       <div>
-          <br/>
-          <br/>
+        <br />
+        <br />
         <div className='tile is-ancestor'>
           <div className='tile is-vertical is-8'>
             <div className='tile'>
               <div className='tile is-parent is-vertical'>
                 <article className='tile is-child notification is-primary'>
                   <p className='title'>Vertical...</p>
-                  <p className='subtitle'>Top tile</p>
+                  <p className='subtitle'>Anant Bahuguna -Lead Developer</p>
                 </article>
                 <article className='tile is-child notification is-warning'>
                   <p className='title'>...tiles</p>
