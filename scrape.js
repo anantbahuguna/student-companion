@@ -332,9 +332,9 @@ app.post("/login", (req, res) => {
       for (let i = 0; i < subjects.length; i++) {
         attend[i] = lect_and_tut[i] || prac[i];
       }
-      data.attendanceData = subjects.concat(attend);
+      // data.attendanceData = subjects.concat(attend);
       console.log(data);
-      console.log(isValidPwd, isValidCredentials);
+      // console.log(isValidPwd, isValidCredentials);
       console.log("sending token", localStorage.getItem("access_token"));
       res.json(localStorage.getItem("access_token"));
     }
