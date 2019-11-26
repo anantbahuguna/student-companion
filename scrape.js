@@ -199,8 +199,8 @@ function getAttendance(callback) {
       } else {
         // console.log(body);
         if (body.includes("Session Timeout")) {
-          createWindow();
-          getAttendance();
+          // createWindow();
+          // getAttendance();
         } else {
           var lect = [];
           var tut = [];
@@ -307,16 +307,7 @@ function getAttendance(callback) {
 
 app.use(cors());
 
-// app.get("/", (req, res) => {
-//   let sess = req.session;
-//   if (sess.enroll) {
-//     return res.redirect("http://localhost:3000/home");
-//   }
 
-//   res.redirect("http://localhost:3000/");
-// });
-const tokenList = {};
-// login(data)
 
 // protected route
 app.post("/login", (req, res) => {
@@ -348,33 +339,7 @@ app.post("/login", (req, res) => {
       res.json(localStorage.getItem("access_token"));
     }
   });
-  // setTimeout(() => {
-  //   console.log(isValidPwd, isValidCredentials);
-  //   if (isValidPwd && isValidCredentials) {
-  //     jwt.sign({ user: data }, "secretkey", (err, token) => {
-  //       console.log(token);
-  //       console.log(typeof token);
-  //       console.log("local", localStorage.getItem("access_token"));
-  //       localStorage.setItem("access_token", JSON.stringify(token));
-
-  //       // const response = {
-  //       //   status: "logged in",
-  //       //   token: token
-  //       // };
-  //       data = "";
-  //       lect = [];
-  //       tut = [];
-  //       prac = [];
-  //       subjects = [];
-  //       lect_and_tut = [];
-  //       attend = [];
-  //       //res.json({ token });
-  //     });
-  //     // res.send(true);
-  //   } else {
-  //     res.send(false);
-  //   }
-  // }, 5000);
+  
 });
 
 
@@ -391,26 +356,7 @@ function logout(){
 
 
 app.get("/showAttendance", verifyToken, (req, res) => {
-  // console.log("sending this to react", subjects);
-  // const token = req.body.token
-  // var data = subjects.concat(attend);
-  // console.log(attend);
-  // jwt.verify(req.token, "secretkey", (err, authData) => {
-  //   if (err) {
-  //     console.log('error not verified')
-  //     res.sendStatus(403);
-  //   } else {
-  //     getAttendance(function(error,attendance){
-  //       authData.attendance = attendance;
-  //       console.log(data.attendance);
-  //     console.log(authData);
-  //     res.send(authData);
-  //     });
-
-  //   }
-  // });
-
-  //sync
+ 
   try {
     const authData = jwt.verify(req.token, "secretkey");
     getAttendance(function(error, attendance) {

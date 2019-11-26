@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import ErrorCard from "./components/ErrorCard";
 import Modal from "./components/Modal";
 import Timetable from "./pages/Timetable";
+import LogoutCard from "./components/LogoutCard";
 class App extends Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends Component {
           <Route path='/' component={Navbar} />
           <Route exact path='/' component={LoginForm} />
           <Route exact path='/login' component={ErrorCard} />
+          <Route exact path='/logout' component={LogoutCard} />
           <Route exact path='/error' component={Modal} />
           <Route exact path='/home' component={Home} />
           <Route exact path='/attendance' component={Attendance} />

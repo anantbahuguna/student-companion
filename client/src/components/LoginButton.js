@@ -4,6 +4,7 @@ class LoginButton extends Component {
   state = {
     isLoggedIn: false
   };
+  
   render() {
     return (
       <div>

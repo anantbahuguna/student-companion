@@ -55,9 +55,10 @@ class LoginForm extends Component {
         )
         .then(() => {
           if (this.state.isValid) {
-            setTimeout(() => {
-              this.setState({ redirect: true });
-            }, 7000);
+            // setTimeout(() => {
+            //   this.setState({ redirect: true });
+            // }, 7000);
+            this.setState({ redirect: true });
           } else {
             console.log("stop load btn", this.state.showModal);
             this.setState({

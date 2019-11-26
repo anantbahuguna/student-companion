@@ -96,15 +96,15 @@ class Navbar extends Component {
                 <a className='button is-primary'>
                   <strong>Sign up</strong>
                 </a>
-                <a className='button is-light' onClick={() => this._logout()}>
+                <Link to='/logout' className='button is-light'>
                   Log out
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </nav>
-      {this.state.isLoggedOut?<Modal body='Logged Out' />:<br/>}
+      {/* {this.state.isLoggedOut?<Modal body='Logged Out' />:<br/>} */}
       </div>
     );
   }
