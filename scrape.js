@@ -426,7 +426,12 @@ app.get("/showAttendance", verifyToken, (req, res) => {
 });
 
 app.get("/logout", (req, res) => {
-  logout(function(error))
+  logout(function(error) {
+    if(error) throw error;
+    else {
+      res.send("logged out")
+    }
+  })
 });
 // format of token
 // authorization: Bearer <access_token>

@@ -1,15 +1,21 @@
 import React, { Component } from "react";
-import {observer} from 'mobx-react'
-
-@observer
+import { Link } from "react-router-dom";
 class LoginButton extends Component {
+  state = {
+    isLoggedIn: false
+  };
   render() {
-      var {show}
     return (
       <div>
-        <a className='button is-primary'>
-          <strong>Sign up</strong>
-        </a>
+        {this.state.isLoggedIn ? (
+          <Link to='/logout' className='button is-light'>
+            <strong>Log Out</strong>
+          </Link>
+        ) : (
+          <Link to='/' className='button is-primary'>
+            <strong>Log In</strong>
+          </Link>
+        )}
       </div>
     );
   }

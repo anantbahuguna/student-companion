@@ -14,14 +14,14 @@ class LoginForm extends Component {
     isValid: "",
     redirect: false,
     btnLoad: false,
-    btnClass: 'button is-block is-info is-fullwidth'
+    btnClass: "button is-block is-info is-fullwidth"
   };
   componentDidMount() {
-    if(localStorage.getItem('access_token')) {
-      this.setState({redirect: true})
-    }
+    // if(localStorage.getItem('access_token')) {
+    //   this.setState({redirect: true})
+    // }
     if (this.state.btnLoad) {
-      console.log('load btn')
+      console.log("load btn");
       var element = document.getElementById("btn-load");
       element.classList.add("is-loading");
     }
@@ -34,8 +34,7 @@ class LoginForm extends Component {
       this.state.dob !== "" &&
       this.state.dob !== "dd/mm/yyyy"
     ) {
-      this.setState({ btnClass: this.state.btnClass+' is-loading' });
-      
+      this.setState({ btnClass: this.state.btnClass + " is-loading" });
 
       axios
         .post("/login", {
@@ -46,8 +45,8 @@ class LoginForm extends Component {
         })
         .then(
           res => {
-            console.log('res.data is ',res.data);
-            localStorage.setItem('access_token',res.data)
+            console.log("res.data is ", res.data);
+            localStorage.setItem("access_token", res.data);
             this.setState({ isValid: res.data });
           },
           error => {
@@ -60,8 +59,11 @@ class LoginForm extends Component {
               this.setState({ redirect: true });
             }, 7000);
           } else {
-            console.log('stop load btn',this.state.showModal)
-            this.setState({ showModal: true, btnClass: 'button is-block is-info is-fullwidth' });
+            console.log("stop load btn", this.state.showModal);
+            this.setState({
+              showModal: true,
+              btnClass: "button is-block is-info is-fullwidth"
+            });
           }
         });
     }
@@ -79,7 +81,7 @@ class LoginForm extends Component {
     return (
       <div className='columns is-flex is-vcentered is-centered'>
         <div className='column is-two-thirds-mobile is-one-third-tablet is-one-quarter-desktop'>
-          <br/>
+          <br />
           <div className='box'>
             <div id='form1'>
               <div className='field'>
