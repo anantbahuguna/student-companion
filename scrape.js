@@ -124,7 +124,8 @@ function login(data, callback) {
                       isValidCredentials = true;
                       isValidPwd = true;
 
-                      jwt.sign({ user: data }, "secretkey", (err, token) => {
+                      jwt.sign({ user: data }, "secretkey",
+                      {expiresIn: '24h'}, (err, token) => {
                         console.log(token);
                         console.log(typeof token);
                         console.log("working");
@@ -405,8 +406,9 @@ app.get("/showAttendance", verifyToken, (req, res) => {
       console.log(authData);
       res.send(authData);
     });
-  } catch (ex) {
-    console.log(ex.message);
+  } catch (err) {
+    console.log(err.message);
+    res.sendStatus(403)
   }
 });
 

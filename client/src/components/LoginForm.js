@@ -17,9 +17,9 @@ class LoginForm extends Component {
     btnClass: 'button is-block is-info is-fullwidth'
   };
   componentDidMount() {
-    // if(localStorage.getItem('access_token')) {
-    //   this.setState({redirect: true})
-    // }
+    if(localStorage.getItem('access_token')) {
+      this.setState({redirect: true})
+    }
     if (this.state.btnLoad) {
       console.log('load btn')
       var element = document.getElementById("btn-load");
@@ -67,9 +67,9 @@ class LoginForm extends Component {
     }
   }
   render() {
-    if (this.state.isValid && !this.state.redirect) {
-      return <Modal body='Setting things up!!' />;
-    }
+    // if (this.state.isValid && !this.state.redirect) {
+    //   return <Modal body='Setting things up!!' />;
+    // }
     if (this.state.redirect) {
       return <Redirect to='/home' />;
     }

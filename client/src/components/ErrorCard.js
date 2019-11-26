@@ -5,9 +5,11 @@ class ErrorCard extends Component {
     return (
       <div className='columns is-flex is-vcentered is-centered'>
         <div className='column is-two-thirds-mobile is-one-third-tablet is-one-quarter-desktop'>
+          <br/>
+          <br/>
           <div className='card'>
             <header className='card-header'>
-              <p className='card-header-title'>Wrong Credentials</p>
+              <p className='card-header-title has-text-centered'>You must be logged in to access this page</p>
               <a
                 href='#'
                 className='card-header-icon'
@@ -20,11 +22,7 @@ class ErrorCard extends Component {
             </header>
             <div className='card-content'>
               <div className='content'>
-                <button class='button is-link'>
-                  <Link to='/'>Home</Link>
-                </button>
-
-                <br />
+                  <Link to='/' className='button is-link is-fullwidth'>Login</Link>
               </div>
             </div>
           </div>
