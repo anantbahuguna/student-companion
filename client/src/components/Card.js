@@ -20,9 +20,7 @@ class Card extends Component {
             </header>
             <div className='card-content'>
               <div className='content'>
-                {this.props.attend} %
-
-                <br />
+                <h1 className='title is-5'>{this.props.attend} %</h1>
               </div>
             </div>
           </div>

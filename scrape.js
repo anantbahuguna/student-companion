@@ -66,7 +66,7 @@ function login(data, callback) {
             url: "https://webkiosk.jiit.ac.in/CommonFiles/UseValid.jsp",
             form: {
               txtInst: "Institute",
-              InstCode: "J128",
+              InstCode: data.inst,
               txtuType: "Member Type",
               UserType101117: "S",
               txtCode: "Enrollment No",
@@ -97,6 +97,7 @@ function login(data, callback) {
                 isValidPwd = false;
                 console.log(body);
                 console.log("invalid pwd");
+                callback("invalid password")
               }
               if (httpResponse.rawHeaders[5].split("=")[1]) {
                 // loginStatus = httpResponse.rawHeaders[5].split('=')[1];
@@ -107,6 +108,7 @@ function login(data, callback) {
                 // return ;
                 isValidCredentials = false;
                 console.log("invalid credentials");
+                callback("invalid credentials")
               } else {
                 request(
                   {
@@ -321,7 +323,10 @@ app.post("/login", (req, res) => {
     .join("-");
 
   login(data, function(error) {
-    if (error) throw error;
+    if (error) {
+      // throw error;
+      res.send(false)
+    }
     else {
       console.log("request body", data);
       console.log("hello", lect_and_tut);
