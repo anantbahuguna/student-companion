@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import timetable from "../static/images/time-table-1.jpg";
+import {Link} from 'react-router-dom'
 class Tile extends Component {
   render() {
     return (
@@ -11,38 +11,45 @@ class Tile extends Component {
             <div className='tile'>
               <div className='tile is-parent is-vertical'>
                 <article className='tile is-child notification is-primary'>
-                  <p>HEllo</p>
+                  <h2 className='title is-4'>WELCOME</h2>
                 </article>
+                <Link to='/timetable'>
                 <article className='tile is-child notification is-warning'>
-                  <p className='title'>...tiles</p>
-                  <p className='subtitle'>Bottom tile</p>
-                </article>
+                  <p className='title'>TIME TABLE</p>
+                  <p className='subtitle'>For all years</p>
+                </article></Link>
               </div>
+              
               <div className='tile is-parent'>
-                <article className='tile is-child notification is-info'>
-                  <p className='title'>Middle tile</p>
-                  <p className='subtitle'>With an image</p>
-                  <figure className='image is-4by3'>
-                    <img src='https://bulma.io/images/placeholders/640x480.png' />
-                  </figure>
-                </article>
+              <Link to='/attendance'>
+                <article className='tile is-child notification is-info is-4by3 box'>
+                <div className='content'>
+                <p className='title'>ATTENDANCE</p>
+                
+                <div className='content'><p className='subtitle'>Check your attendance and see if you have to attend the next boring lecture or not</p></div>
+              </div> 
+                </article></Link>
               </div>
             </div>
+            <Link to='/support'>
             <div className='tile is-parent'>
+            
               <article className='tile is-child notification is-danger'>
-                <p className='title'>Wide tile</p>
-                <p className='subtitle'>Aligned with the right tile</p>
+              
+                <p className='title'>CONTACT US</p>
+                <p className='subtitle'>For any queries or suggestions....</p>
                 <div className='content'></div>
               </article>
-            </div>
+            </div></Link>
           </div>
           <div className='tile is-parent'>
-            <article className='tile is-child notification is-success'>
-              <div className='content'>
-                <p className='title'>Tall tile</p>
-                <p className='subtitle'>With even more content</p>
-                <div className='content'></div>
-              </div>
+            <article className='tile is-child notification is-success box'>
+                <p className='title'>ABOUT US</p>
+                
+                <div className='content'><p className='subtitle'>
+                  A group of geeks under a dedicated mentor.
+                </p></div>
+              
             </article>
           </div>
         </div>

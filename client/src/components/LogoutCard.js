@@ -17,7 +17,9 @@ class LogoutCard extends Component {
   render() {
     return (
       <div className='columns is-flex is-vcentered is-centered'>
+        
         <div className='column is-two-thirds-mobile is-one-third-tablet is-one-quarter-desktop'>
+          <br/><br/><br/><br/>
           <div className='card'>
             <header className='card-header'>
               <p className='card-header-title has-text-centered'>

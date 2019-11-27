@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import Modal from './Modal'
-import logo from '../static/images/cover.jpg'
+import logo from '../static/images/student-companion.png'
 
 class Navbar extends Component {
   state = {
@@ -56,15 +56,14 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-      <nav className='navbar' role='navigation' aria-label='main navigation'>
+      <nav className='navbar is-fixed-top is-light' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
-          <a className='navbar-item' href='https://bulma.io'>
-            <img
-              src= {logo}
-              width='50'
-              height='28'
-            />
-          </a>
+          <br/>
+        {/* <h2 className='title is-5'> */}
+        <Link to={"/home"} className='navbar-item '>
+        <img src={logo} /> 
+            </Link>
+            {/* </h2> */}
 
           <a
             role='button'
@@ -111,7 +110,7 @@ class Navbar extends Component {
             <div className='navbar-item'>
               <div className='buttons'>
                 <a className='button is-primary'>
-                  <strong>Sign up</strong>
+                  <strong>Log In</strong>
                 </a>
                 <Link to='/logout' className='button is-light'>
                   Log out
