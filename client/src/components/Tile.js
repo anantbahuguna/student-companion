@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import timetable from '../static/images/time-table-1.jpg'
+import timetable from "../static/images/time-table-1.jpg";
 class Tile extends Component {
   render() {
     return (
@@ -11,7 +11,7 @@ class Tile extends Component {
             <div className='tile'>
               <div className='tile is-parent is-vertical'>
                 <article className='tile is-child notification is-primary'>
-                  <img src={timetable} />
+                  <p>HEllo</p>
                 </article>
                 <article className='tile is-child notification is-warning'>
                   <p className='title'>...tiles</p>
