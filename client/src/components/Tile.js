@@ -10,9 +10,7 @@ class Tile extends Component {
           <div className='tile is-vertical is-8'>
             <div className='tile'>
               <div className='tile is-parent is-vertical'>
-                <article className='tile is-child notification is-primary'>
-                  <h2 className='title is-4'>WELCOME</h2>
-                </article>
+                
                 <Link to='/timetable'>
                 <article className='tile is-child notification is-warning'>
                   <p className='title'>TIME TABLE</p>
